@@ -17,7 +17,11 @@ const mainBody = {
     },
     {
       image: "fa-linkedin",
-      url: "https://www.inkedin.com/in/IgAI",
+      url: "https://www.linkedin.com/in/IgAI",
+    },
+    {
+      image: "fa-google",
+      url: "mailto:i3gupta@ucsd.edu",
     },
   ],
 };
@@ -120,7 +124,7 @@ const getInTouch = {
 
 const experiences = {
   show: true,
-  heading: "Experiences",
+  heading: "Experience",
   data: [
     {
       role: 'Software Engineer',// Here Add Company Name
