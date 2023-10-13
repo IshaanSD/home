@@ -33,6 +33,7 @@ const Project = ({ heading, username, length, specfic }) => {
       const response = await axios.get(allReposAPI);
       // slicing to the length
       repoList = [...response.data.slice(0, length)];
+      console.log(repoList)
       // adding specified repos
       try {
         for (let repoName of specfic) {
