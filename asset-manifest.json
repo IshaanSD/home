@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/home/static/css/main.fe927caf.css",
-    "main.js": "/home/static/js/main.99830502.js",
-    "static/js/787.4b24f717.chunk.js": "/home/static/js/787.4b24f717.chunk.js",
-    "static/media/hashirshoaeb.png": "/home/static/media/hashirshoaeb.23e8b5a1f7de87f03d05.png",
+    "main.js": "/home/static/js/main.6df12402.js",
+    "static/media/resume.pdf": "/home/static/media/resume.ec49f56880b9e96778bd.pdf",
+    "static/media/ishaangupta.jpeg": "/home/static/media/ishaangupta.abc94585276e128a9bbd.jpeg",
+    "static/media/Abterra-bio.jpeg": "/home/static/media/Abterra-bio.8261a419d7f77ba72d55.jpeg",
     "index.html": "/home/index.html",
     "main.fe927caf.css.map": "/home/static/css/main.fe927caf.css.map",
-    "main.99830502.js.map": "/home/static/js/main.99830502.js.map",
-    "787.4b24f717.chunk.js.map": "/home/static/js/787.4b24f717.chunk.js.map"
+    "main.6df12402.js.map": "/home/static/js/main.6df12402.js.map"
   },
   "entrypoints": [
     "static/css/main.fe927caf.css",
-    "static/js/main.99830502.js"
+    "static/js/main.6df12402.js"
   ]
 }
