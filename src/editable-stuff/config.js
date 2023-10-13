@@ -47,7 +47,7 @@ const about = {
   imageSize: 375,
   message:
     "Immune system is the hub connecting Cancer, Infections, Autoimmunity, Allergies, and almost all disorders we face. However, 'immunity' is driven by hundreds of different classes of proteins. The main players, Antibodies and TCRs, originate from the allegedly most complicated region in the human genome, making personalized treatments nontrivial. My drive is to leverage Bioinformatics Algorithms and AI combined with deep Biological understanding to attain Personalized Immunogenomics -i.e predict immune respone and recommend therapies for each unique patient.",
-  resume: require("../editable-stuff/resume.pdf"),
+  resume: require("https://docs.google.com/document/d/1RMcYDYB_lx-uJ98JoV91SaXBJMfhAcHRVyB8Qgp_CTk/edit?usp=sharing"),
 };
 
 // PROJECTS SECTION
