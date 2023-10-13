@@ -46,8 +46,8 @@ const about = {
   imageLink: require("../editable-stuff/ishaangupta.jpeg"),
   imageSize: 375,
   message:
-    "Immune system is the hub connecting Cancer, Infections, Autoimmunity, Allergies, and almost all disorders we face. However, 'immunity' is driven by hundreds of different classes of proteins. The main players, Antibodies and TCRs, originate from the allegedly most complicated region in the human genome, making personalized treatments nontrivial. My drive is to leverage Bioinformatics Algorithms and AI combined with deep Biological understanding to attain Personalized Immunogenomics -i.e predict immune respone and recommend therapies for each unique patient.",
-  resume: require("https://docs.google.com/document/d/1RMcYDYB_lx-uJ98JoV91SaXBJMfhAcHRVyB8Qgp_CTk/edit?usp=sharing"),
+    `Immune system is the hub connecting Cancer, Infections, Autoimmunity, Allergies, and almost all disorders we face. However, 'immunity' is driven by hundreds of different classes of proteins. The main players, Antibodies and TCRs, originate from the allegedly most complicated region in the human genome, making personalized treatments nontrivial. My drive is to leverage Bioinformatics Algorithms and AI combined with deep Biological understanding to attain Personalized Immunogenomics -i.e predict immune respone and recommend therapies for each unique patient.`,
+  resume: require("../editable-stuff/resume.pdf"),
 };
 
 // PROJECTS SECTION
@@ -56,7 +56,7 @@ const about = {
 // If you want to display specfic projects, add the repository names,
 //      i.e ["repository-1", "repo-2"]
 const repos = {
-  show: true,
+  show: false,
   heading: "Recent Projects",
   gitHubUsername: "IshaanSD",
   reposLength: 4,
@@ -65,7 +65,7 @@ const repos = {
 
 // Leadership SECTION
 const leadership = {
-  show: true,
+  show: false,
   heading: "Leadership",
   message:
     "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae auctor eu augue ut lectus arcu bibendum at varius. Libero justo laoreet sit amet cursus sit amet. Imperdiet dui accumsan sit amet nulla facilisi morbi. At auctor urna nunc id. Iaculis urna id volutpat lacus laoreet non curabitur gravida. Et magnis dis parturient montes nascetur ridiculus mus mauris. In nisl nisi scelerisque eu ultrices vitae auctor. Mattis nunc sed blandit libero volutpat sed cras ornare. Pulvinar neque laoreet suspendisse interdum consectetur libero.",
@@ -89,7 +89,7 @@ const leadership = {
 
 // SKILLS SECTION
 const skills = {
-  show: true,
+  show: false,
   heading: "Skills",
   hardSkills: [
     { name: "Python", value: 90 },
@@ -127,29 +127,46 @@ const experiences = {
   heading: "Experience",
   data: [
     {
+      role: 'Research Assistant (under Dr. Pavel Pevzner)',
+      company: 'UCSD CSE Department, San Diego, CA',
+      companylogo: require('../assets/img/ucsd_cse.png'),
+      link: 'https://bioalgorithms.ucsd.edu/',
+      date: 'June 2021 – August 2021',
+      info: `
+        <ul>
+          <li>Applying my Undergraduate Honors Thesis (2022) to find and analyze novel antibody genes in primates and human haplotypes</li>
+          <li>Optimized UniAligner (C++ aligner for highly-repetitive regions) - reduced runtime by 80% for 1M bp; added interactive dotplots  tool</li>
+          <li>Developed Nanopore-based protein sequencing pipeline by applying Signal Processing and ML (Clustering, PCA) approaches</li>
+        </ul>
+      `
+    },
+    {
       role: 'Software Engineer',// Here Add Company Name
-      company: 'Illumina',
+      company: 'Illumina, San Diego, CA',
       companylogo: require('../assets/img/illumina.png'),
+      link: 'https://www.illumina.com/',
       date: 'June 2022 – December 2022',
+      info: `
+        <ul>
+          <li>Improved traceability of LIMS software central to Illumina’s high-throughput Genotyping and Methylation pipelines (Agile SDLC)</li>
+          <li>Developed and deployed highly scalable microservices in Java 7/8 (Spring+JDBC) integrated using APIs and AMQP</li>
+          <li>Found and fixed critical bugs in legacy code, troubleshot software integration issues, automated tests, curated database for support</li>
+        <ul>
+      `
     },
     {
       role: 'Bioinformatics intern',
-      company: 'AbterraBio',
+      company: 'AbterraBio, San Diego, CA',
       companylogo: require('../assets/img/Abterra-bio.jpeg'),
+      link: 'https://abterrabio.com/',
       date: 'June 2021 – August 2021',
-    },
-    {
-      role: 'Bioinformatics intern',
-      company: 'AbterraBio',
-      companylogo: require('../assets/img/Abterra-bio.jpeg'),
-      date: 'June 2021 – August 2021',
-    },
-    {
-      role: 'Bioinformatics intern',
-      company: 'AbterraBio',
-      companylogo: require('../assets/img/Abterra-bio.jpeg'),
-      date: 'June 2021 – August 2021',
-    }    
+      info: `
+      <ul>
+        <li>Achieved >95% performance in Proteomics task for Antibody sequencing by experimenting multiple Deep learning approaches</li>
+        <li>Optimized data structures and used Data Manipulation, parallel processing and ML libraries in Java 8 (DL4J)</li>
+      <ul>
+    `
+    }
   ]
 }
 
