@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/home/static/css/main.fe927caf.css",
-    "main.js": "/home/static/js/main.d347eda7.js",
-    "static/media/resume.pdf": "/home/static/media/resume.ec49f56880b9e96778bd.pdf",
+    "main.js": "/home/static/js/main.126adfd6.js",
+    "static/media/resume.pdf": "/home/static/media/resume.0a14cf9c362915b113d7.pdf",
     "static/media/ishaangupta.jpeg": "/home/static/media/ishaangupta.abc94585276e128a9bbd.jpeg",
     "static/media/Abterra-bio.jpeg": "/home/static/media/Abterra-bio.8261a419d7f77ba72d55.jpeg",
     "static/media/ucsd_cse.png": "/home/static/media/ucsd_cse.cb20b69b01cdc99f4004.png",
     "index.html": "/home/index.html",
     "main.fe927caf.css.map": "/home/static/css/main.fe927caf.css.map",
-    "main.d347eda7.js.map": "/home/static/js/main.d347eda7.js.map"
+    "main.126adfd6.js.map": "/home/static/js/main.126adfd6.js.map"
   },
   "entrypoints": [
     "static/css/main.fe927caf.css",
-    "static/js/main.d347eda7.js"
+    "static/js/main.126adfd6.js"
   ]
 }
