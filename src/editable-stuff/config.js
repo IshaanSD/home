@@ -9,7 +9,7 @@ const mainBody = {
   firstName: "Ishaan",
   middleName: "",
   lastName: "Gupta",
-  message: "Unraveling the complexities of the genome, its variation and evolution, particularly implications in the immune system, using Bioinformatics Algorithms and ML",
+  message: "ML Engineer · Deep Learning Researcher · PhD Candidate at UCSD",
   icons: [
     {
       image: "fa-github",
@@ -46,7 +46,7 @@ const about = {
   imageLink: require("../editable-stuff/ishaangupta.jpeg"),
   imageSize: 375,
   message:
-    `Immune system is the hub connecting Cancer, Infections, Autoimmunity, Allergies, and almost all disorders we face. However, 'immunity' is driven by hundreds of different classes of proteins. The main players, Antibodies and TCRs, originate from the allegedly most complicated region in the human genome, making personalized treatments nontrivial. My drive is to leverage Bioinformatics Algorithms and AI combined with deep Biological understanding to attain Personalized Immunogenomics -i.e predict immune respone and recommend therapies for each unique patient.`,
+    `ML PhD researcher in deep learning applications, building robust AI pipelines for noisy, limited-label real-world data, with experience spanning biotechnology, surgical analytics, recommendation systems, and data engineering.`,
   resume: require("../editable-stuff/resume.pdf"),
 };
 
@@ -118,7 +118,7 @@ const getInTouch = {
   show: true,
   heading: "Get In Touch",
   message:
-    "I'm currently looking for Bioinformatics summer internship opportunities! If you know of any positions available, if you have any questions, or if you just want to say hi, please feel free to email me at",
+    "I'm always happy to connect — whether it's about research, ML engineering, or potential collaborations. Feel free to reach out at",
   email: "i3gupta@ucsd.edu",
 };
 
@@ -127,45 +127,79 @@ const experiences = {
   heading: "Experience",
   data: [
     {
-      role: 'Research Assistant (under Dr. Pavel Pevzner)',
-      company: 'UCSD CSE Department, San Diego, CA',
-      companylogo: require('../assets/img/ucsd_cse.png'),
-      link: 'https://bioalgorithms.ucsd.edu/',
-      date: 'June 2021 – August 2021',
+      role: ‘Graduate Student Researcher — Deep Learning (Dr. Tiffany Amariuta)’,
+      company: ‘Halıcıoğlu Data Science Institute, UCSD’,
+      companylogo: require(‘../assets/img/ucsd_cse.png’),
+      link: ‘https://datascience.ucsd.edu/’,
+      date: ‘Sep 2024 – Present’,
       info: `
         <ul>
-          <li>Applying my Undergraduate Honors Thesis (2022) to find and analyze novel antibody genes in primates and human haplotypes</li>
-          <li>Optimized UniAligner (C++ aligner for highly-repetitive regions) - reduced runtime by 80% for 1M bp; added interactive dotplots  tool</li>
-          <li>Developed Nanopore-based protein sequencing pipeline by applying Signal Processing and ML (Clustering, PCA) approaches</li>
+          <li>Built DiploFormer, a Nextflow/PyTorch framework to adapt foundation models to personal genomes for disease mechanisms discovery.</li>
+          <li>Fine-tuned a 186M-parameter FlashAttention transformer + CNN-based model across people and sequence contexts on multi-modal data.</li>
+          <li>Implemented delayed pairwise-loss computation via output accumulation; ran W&B/MLflow sweeps of adaptation strategies and ablations.</li>
+          <li>Optimized resource-aware CPU/GPU workflows with parallel jobs and model checkpoint recovery across preprocessing, training, and inference.</li>
+          <li>Benchmarked against Elastic Net/XGBoost baselines, monitored data drift, verified discovery of causal features through external validation.</li>
         </ul>
       `
     },
     {
-      role: 'Software Engineer',// Here Add Company Name
-      company: 'Illumina, San Diego, CA',
-      companylogo: require('../assets/img/illumina.png'),
-      link: 'https://www.illumina.com/',
-      date: 'June 2022 – December 2022',
+      role: ‘AI Data Scientist Intern’,
+      company: ‘Intuitive Surgical, Inc.’,
+      companylogo: require(‘../assets/img/intuitive_logo160.png’),
+      link: ‘https://www.intuitive.com/’,
+      date: ‘Jun 2026 – Sep 2026’,
       info: `
         <ul>
-          <li>Improved traceability of LIMS software central to Illumina’s high-throughput Genotyping and Methylation pipelines (Agile SDLC)</li>
-          <li>Developed and deployed highly scalable microservices in Java 7/8 (Spring+JDBC) integrated using APIs and AMQP</li>
-          <li>Found and fixed critical bugs in legacy code, troubleshot software integration issues, automated tests, curated database for support</li>
-        <ul>
+          <li>Engineered Python/SQL components across the full analytics pipeline, transforming action-recognition outputs from 100K+ surgical cases into validated event tables, benchmark metrics, and dashboard-ready user-facing insights for analyzing hospital operational efficiency.</li>
+          <li>Improved temporal analytics robustness by evaluating outlier-detection strategies and implementing a custom GMM/IQR detector.</li>
+          <li>Built an LLM-assisted data-ingestion and validation workflow to standardize inconsistent hospital observation spreadsheets for user research.</li>
+          <li>Enabled detector robustness and longitudinal trend analyses that identified service-associated improvements in business outcomes.</li>
+        </ul>
       `
     },
     {
-      role: 'Bioinformatics intern',
-      company: 'AbterraBio, San Diego, CA',
-      companylogo: require('../assets/img/Abterra-bio.jpeg'),
-      link: 'https://abterrabio.com/',
-      date: 'June 2021 – August 2021',
+      role: ‘Machine Learning Engineer Intern’,
+      company: ‘Abterra Biosciences’,
+      companylogo: require(‘../assets/img/Abterra-bio.jpeg’),
+      link: ‘https://abterrabio.com/’,
+      date: ‘Jul 2024 – Sep 2024’,
       info: `
-      <ul>
-        <li>Achieved >95% performance in Proteomics task for Antibody sequencing by experimenting multiple Deep learning approaches</li>
-        <li>Optimized data structures and used Data Manipulation, parallel processing and ML libraries in Java 8 (DL4J)</li>
-      <ul>
-    `
+        <ul>
+          <li>Benchmarked autoregressive transformer models for de novo peptide sequencing, improving held-out performance 4× on in-house data.</li>
+          <li>Built reproducible PyTorch Lightning + W&B training workflows for hyperparameter sweeps, model comparison, and failure-mode analysis.</li>
+          <li>Achieved 95% accuracy (baseline: 60%) in resolving ambiguous antibodies through peptide–spectrum feature engineering and FNN classifiers.</li>
+          <li>Deployed trained deep learning models in the company’s Java codebase using DL4J, enabling parallelized performance evaluation.</li>
+        </ul>
+      `
+    },
+    {
+      role: ‘Graduate Student Researcher — Algorithms (Dr. Pavel A. Pevzner)’,
+      company: ‘UCSD CSE Department’,
+      companylogo: require(‘../assets/img/ucsd_cse.png’),
+      link: ‘https://bioalgorithms.ucsd.edu/’,
+      date: ‘Jan 2022 – Jul 2024’,
+      info: `
+        <ul>
+          <li>Co-designed GenomeDecoder (C++) for finding 10K–1M long inexact repeats in 100M-long sequences by iteratively simplifying de Bruijn graphs.</li>
+          <li>Outperformed SOTA on segmental duplication detection in immune loci; browser-friendly genome-scale visualization published in Bioinformatics (2025).</li>
+          <li>Improved UniAligner (suffix-array-based alignment) runtime 4–10× and integrated with GenomeDecoder to discover gene deletions across primate genomes. Nature (2025).</li>
+          <li>Developed signal-processing methods using cumulative sums, FFT, and clustering for delineating bidirectionality in noisy Nanopore signals.</li>
+        </ul>
+      `
+    },
+    {
+      role: ‘Software Engineer I — Systems Integration’,
+      company: ‘Illumina, Inc.’,
+      companylogo: require(‘../assets/img/illumina.png’),
+      link: ‘https://www.illumina.com/’,
+      date: ‘Jun 2022 – Dec 2022’,
+      info: `
+        <ul>
+          <li>Developed production-grade ETL infrastructure code for high-throughput lab automation workflows processing 10,000s of samples/day.</li>
+          <li>Built REST APIs and event-driven microservices using Java Spring/JDBC, SQL databases, RabbitMQ, AWS S3/SQS, and TypeScript.</li>
+          <li>Deployed Dockerized services on Kubernetes with SQL stored procedures, JUnit tests, and CI/CD release workflows.</li>
+        </ul>
+      `
     }
   ]
 }

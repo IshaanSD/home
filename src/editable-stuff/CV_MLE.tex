@@ -1,0 +1,337 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+%===============================================================================
+%  MASTER CV  —  TECH / FAANG track
+%  Target roles: ML Engineer, SWE-ML, Applied Scientist (ML), GenAI Engineer
+%  READABILITY NOTES:
+%   - Visible bullets = one line each, minimal bold (numbers + one marquee term).
+%   - Deeper specifics live in "% INTERVIEW PREP" comments per entry.
+%   - This is a *master* resume; trim/reorder per JD.
+%===============================================================================
+\documentclass[11pt, a4paper]{awesome-cv}
+\geometry{left=1.4cm, top=1.35cm, right=1.4cm, bottom=1.35cm}
+\colorlet{awesome}{darktext}
+\usepackage{hyperref}
+
+% ---- Tighter vertical spacing than stock, without cramping ----
+\renewcommand{\acvSectionTopSkip}{2.2mm}
+\renewcommand{\acvSectionContentTopSkip}{3.0mm}
+\renewcommand{\acvHeaderAfterSocialSkip}{4.0mm}
+\setlength{\parskip}{6pt}
+
+\name{Ishaan}{Gupta}
+\position{ML Engineer {\enspace}|{\enspace} Deep Learning Researcher}
+\address{San Diego / Bay Area, CA}
+\email{i3gupta@ucsd.edu}
+\homepage{ishaanSD.github.io/home}
+\linkedin{IgAI}
+\github{IshaanSD}
+
+\begin{document}
+\makecvheader
+
+%-------------------------------------------------------------------------------
+\begin{cvparagraph}
+% CS PhD researcher in deep learning applications, building ML systems where success depends on more than the model: noisy measurements, limited labels, domain constraints, robust pipelines, and reliable evaluation.
+ML PhD researcher in deep learning applications, building robust AI pipelines for noisy, limited-label real-world data, with experience spanning biotechnology, surgical analytics, recommendation systems, and data engineering.
+\end{cvparagraph}
+
+%-------------------------------------------------------------------------------
+\cvsection{Education}
+\begin{cventries}
+\cventry
+{Ph.D. Computer Science — Deep Learning for Genomics \quad | \quad M.S. Computer Science, earned en route}
+{University of California, San Diego}
+{La Jolla, CA}
+{Sep 2023 -- Mar 2028 (exp.)}
+{
+\begin{cvitems}
+\item {M.S. awarded Jun 2025 {\enspace}|{\enspace} GPA 3.92 {\enspace}|{\enspace} Charles Lee Powell Research Fellowship {\enspace}|{\enspace} Advisors: Tiffany Amariuta, Pavel A. Pevzner}
+\end{cvitems}
+}
+
+\cventry
+{B.S. Computer Science — Bioinformatics Specialization}
+{University of California, San Diego}
+{La Jolla, CA}
+{Aug 2019 -- Jun 2022}
+{
+\begin{cvitems}
+\item {GPA 3.92 {\enspace}|{\enspace} Magna Cum Laude {\enspace}|{\enspace} IEEE Eta Kappa Nu {\enspace}|{\enspace} Minor in Biology}
+\end{cvitems}
+}
+\end{cventries}
+
+%-------------------------------------------------------------------------------
+\cvsection{Experience}
+\begin{cventries}
+
+
+  % =============================== DIPLOFORMER =================================
+  % INTERVIEW PREP (not shown on CV):
+  %  - 186M-param FlashAttention transformer; progressive unfreezing
+  %    (backbone frozen epoch 1, then adapted).
+  %  - Data: 400 individuals; EITHER 8,100 loci @4,096bp OR 2,700 loci @49kbp.
+  %  - HW: mixed precision on 2×V100 or single H100; <100-sample runs -> 2 jobs
+  %    co-located on one H100.
+  %  - Nextflow DAG: CPU nodes (ingest/preprocess) -> GPU (train) -> light GPU (infer).
+  %  - Fault tolerance: preempted Slurm jobs resume into the SAME W&B run.
+  %  - Baselines Elastic Net + XGBoost. Drift detection stratified by ancestry and by
+  %    biological features of genes/peaks (generalized to "subpopulations" on CV).
+  %  - Predicts personalized molecular phenotypes (gene expression, chromatin
+  %    accessibility) that generalize across loci AND across people.
+  %  - Venues: Keystone 2025 (poster); ASHG 2026.
+  \cventry
+    {Graduate Student Researcher — Deep Learning (Dr. Tiffany Amariuta)}
+    {Halıcıoğlu Data Science Institute, UCSD}
+    {San Diego, CA}
+    {Sep 2024 -- Present}
+    {
+      \begin{cvitems}
+        \item {Built \textit{DiploFormer}, a Nextflow/\textbf{PyTorch} framework to adapt foundation models to personal genomes for disease mechanisms discovery.}
+        \item {Fine-tuned \textbf{186M-parameter} FlashAttention \textbf{transformer} + CNN-based model across people and sequence contexts on multi-modal data.}
+        \item {Implemented delayed pairwise-loss computation via output accumulation, ran \textbf{WandB} / MLflow sweeps of adaptation strategies and ablations.}
+        \item {Optimized resource-aware CPU/GPU workflows with parallel jobs, model checkpoint recovery across preprocessing, training, and inference.}
+        \item {Benchmarked against Elastic Net/\textbf{XGBoost} baselines, monitored data drift, verified discovery of causal features through external validation.}
+      \end{cvitems}
+    }
+
+  % =============================== INTUITIVE ===================================
+  % INTERVIEW PREP (not shown on CV):
+  %  - LOF (Local Outlier Factor) ~O(n^2), memory-heavy. Replaced with GMM (linear)
+  %    or boxplot/IQR (O(n log n)). Fill [N]× after benchmarking on one batch.
+  %  - Latency = BATCH/compute (not endpoint): wall-clock of outlier stage before/
+  %    after; full analytics-refresh time; memory drop. Serving is FastAPI but
+  %    team-owned — mention only if role centers on serving.
+  %  - "Trend algorithms + significance testing vs. downstream outcomes."
+  %  - Product (DO NOT reveal): which OR / prep time / surgeon is slow; scheduling
+  %    utilization. "Robust diagnostics" = median/IQR/MAD summaries.
+  \cventry
+    {AI Data Scientist Intern}
+    {Intuitive Surgical, Inc.}
+    {Sunnyvale, CA}
+    {Jun 2026 -- Sep 2026}
+    {
+      \begin{cvitems}
+        \item {Engineered Python/SQL components across the full analytics pipeline, transforming action-recognition outputs from 100K+ surgical cases into validated event tables, benchmark metrics, and dashboard-ready \textbf{user-facing insights} for analyzing hospital operational efficiency.}
+        \item {Improved \textbf{temporal analytics} robustness by evaluating \textbf{outlier-detection} strategies and implementing a custom GMM/IQR detector.}
+        % \item {Built an LLM-assisted data-ingestion workflow to standardize inconsistent spreadsheet schemas from multi-site hospital observations, using rule-grounded prompts and human-in-the-loop validation to reconcile metric names and quantify longitudinal outcome trends.}
+        \item {Built an LLM-assisted data-ingestion and validation workflow to standardize inconsistent hospital observation spreadsheets for user research}
+        \item {Enabled detector robustness and longitudinal trend analyses that identified service-associated improvements in business outcomes.}
+        % \item {Implemented validation and evaluation workflows measuring detector robustness, false-positives, and association with downstream KPIs.}
+      \end{cvitems}
+    }
+
+  % =============================== ABTERRA ====================================
+  % INTERVIEW PREP: 4× = improvement on UNSEEN, company-specific data after
+  % fine-tuning autoregressive transformers for de novo peptide sequencing (mass-spec).
+  \cventry
+    {Machine Learning Engineer Intern}
+    {Abterra Biosciences}
+    {San Diego, CA}
+    {Jul 2024 -- Sep 2024}
+    {
+      \begin{cvitems}
+        \item {Benchmarked autoregressive transformer models for de novo peptide sequencing, improving held-out performance \textbf{4$\times$} on in-house data.}
+        \item {Built reproducible PyTorch Lightning + W\&B training workflows for hyperparameter sweeps, model comparison, and failure-mode analysis.}
+        \item {Achieved \textbf{95\% accuracy} (baseline: 60\%) in resolving ambiguous antibodies through peptide–spectrum feature engineering and FNN classifiers.}
+        \item {Deployed trained deep learning models in the company's Java codebase using DL4J, enabling parallelized performance evaluation.}
+      \end{cvitems}
+    }
+    
+  % =============================== PEVZNER ====================================
+  % INTERVIEW PREP:
+  %  - Repeat-finding project: approximate + suffix-array pattern matching with an
+  %    ITERATIVE de Bruijn graph simplification procedure; repeat-motif lengths
+  %    10,000 to 1,000,000 characters. Beat SOTA repeat detection in the critical
+  %    immune-system DNA loci (Primate T2T; Nature 2025). Suffix-array alignment
+  %    (unialigner) optimized 4-10× in C++.
+  %  - Signal-processing (SEPARATE project): cumulative sums (CUSUM) for nanopore
+  %    blockade detection; FFT + clustering to infer directionality of the peptide
+  %    sequence.
+  %  - Papers: Nature (ape genomes / Primate T2T) + Bioinformatics (GenomeDecoder).
+  %    Plotly genome-scale viz lives on the Bio CV.
+  \cventry
+    {Graduate Student Researcher — Algorithms (Dr. Pavel A. Pevzner)}
+    {UCSD CSE Department}
+    {San Diego, CA}
+    {Jan 2022 -- Jul 2024}
+    {
+      \begin{cvitems}
+        \item {Co-Designed GenomeDecoder (\textbf{C++}) for finding 10K-1M long inexact repeats in 100M long sequences by iteratively simplifying de Bruijn graphs}
+        \item {Outperformed SOTA on segmental duplication detection in immune loci; Browser-friendly genome-scale visualization of the duplications \textit{Bioinformatics} (2025).}
+        \item {Improved UniAligner (suffix-array-based alignment) runtime \textbf{4--10$\times$} and integrated with GenomeDecoder to discover gene deletions across primate genomes. \textit{Nature (2025)}}
+        \item {Developed signal-processing methods using cumulative sums, FFT, and clustering for delineating bidirectionality in noisy Nanopore signals.}
+      \end{cvitems}
+    }
+    
+  % =============================== ILLUMINA ===================================
+  % INTERVIEW PREP: Agile; LIMS = Lab Information Management System; genotyping
+  % 10,000s samples/day; Java Spring + SQL + Angular; REST, AWS, RabbitMQ; containerized.
+  \cventry
+    {Software Engineer I — Systems Integration}
+    {Illumina, Inc.}
+    {San Diego, CA}
+    {Jun 2022 -- Dec 2022}
+    {
+      \begin{cvitems}
+        \item {Developed production-grade ETL infrastructure code for high-throughput lab automation workflows processing \textbf{10{,}000s of samples/day}.}
+        \item {Built REST APIs and event-driven microservices using Java Spring/JDBC, SQL databases, RabbitMQ, AWS S3/SQS, and TypeScript.}
+        \item {Deployed \textbf{Dockerized} services on \textbf{Kubernetes} with SQL stored procedures, JUnit tests, and CI/CD release workflows.}
+      \end{cvitems}
+    }
+    % \cventry
+    % {Drug Discovery Project Consultant}
+    % {Model Medicines}
+    % {San Diego, CA}
+    % {Nov 2020 – Mar 2021}
+    % {
+    %   \begin{cvitems}
+    %     \item {Engineered \textbf{GCP BigQuery}-based COVID-19 drug screening pipeline supporting \textbf{SQL} queries on ChEMBL data, and RDKit molecular fingerprints.}
+    %     \item {Led project team for \textbf{NLP tool} to evaluate therapeutic potential by \textbf{text-mining} scientific journals for input drug keywords and their synonyms.}
+    %   \end{cvitems}
+    % }
+\end{cventries}
+
+%-------------------------------------------------------------------------------
+\cvsection{Selected Projects}
+\begin{cventries}
+  % CHEMBOT — 3 MCP servers over openFDA (labels + FAERS) and PubMed; LangGraph
+  % multi-route router; ChromaDB + SentenceTransformers + OpenAI; deployed on GCP.
+    \cventry
+    {LangGraph · MCP · RAG · ChromaDB · Google Cloud}
+    {{ChemBot - Agentic RAG Assistant for Trusted OTC Drug Information}}
+    {~}
+    {(github.com/IshaanSD/ChemBot)}
+    {
+        \begin{cvitems}
+            \item {Agentic system for over-the-counter drug information retrieval (eg: side-effects) grounded in trusted biomedical evidence (FAERS and PubMed).}
+            \item {\textbf{LangGraph} routing across \textbf{MCP servers} integrated with RAG (ChromaDB), embeddings (SentenceTransformer), and LLMs (OpenAI/Gemini)}
+            \item {Deployed on Google Cloud with automated evaluations for tool-calling, agent skills, citation faithfulness, and cross-LLM response quality.}
+        \end{cvitems}
+    }
+
+  % GENERATIVE MODELS — latent diffusion (UNet, conditional chest X-ray), β-VAE
+  % (interpretable latents), UNet-GAN (mammogram augmentation + tumor classification).
+  \cventry
+    {Diffusion Model · $\beta$-VAE · Context U-Net · GAN}
+    {Generative Models for Medical Image Augmentation}
+    {~}
+    {(github.com/IshaanSD/DLCXR)}
+    {
+        \begin{cvitems}
+            \item {Built a \textbf{diffusion model} training pipeline using $\beta$-VAE latent encoding and a Context U-Net denoiser, and demonstrated on chest X-ray images.}
+            \item {Implemented disentangled $\beta$-VAE representations for CXR generation and a U-Net GAN baseline for mammography augmentation.}
+        \end{cvitems}
+    }
+
+
+  % MITOEDIT — MCP server lets any agent run tool via NL; multi-format ingestion;
+  % downstream queries e.g. "targets with no non-benign bystanders". Existing stack:
+  % Python + FastAPI web UI + Docker + tests + alignment/liftover -> CSVs. bioRxiv preprint.
+  \cventry
+    {MCP · LLM Agents · FastAPI · Docker · Python}
+    {MitoEdit — Lab-in-the-Loop Agent for Mitochondrial Research at St. Jude}
+    {~}
+    {(github.com/xz-stjude/MitoEdit)}
+    {
+        \begin{cvitems}
+            \item {Built an \textbf{MCP server} and FastAPI layer that lets bench scientists run TalenWF through typed, agent-callable tools. \textit{(manuscript in preparation)}}
+            \item {Dockerized a CI/CD-enabled Python workflow + UI for identifying mtDNA cancer variants editable by TALE and predicting bystander edits.}
+        \end{cvitems}
+    }
+    % GRAPHAZON — recommendation / ranking. Learn-to-rank via LambdaMART (LightGBM);
+    % NDCG/MRR; Amazon ESCI Shopping Queries; KG + Node2Vec + text embeddings.
+    \cventry
+    {LangChain · Knowledge Graphs · LightGBM / LambdaMART}
+    {Graphazon - Natural Language Query-based Product Recommendation}
+    {~}
+    {(github.com/IshaanSD/Graphazon)}
+    {
+      \begin{cvitems}
+        \item {Built a product-recommendation pipeline on the Amazon ESCI dataset, using an LLM to parse queries into typed intents.}
+        \item {Combined knowledge-graph, Node2Vec, and text embeddings with \textbf{LambdaMART} learn-to-rank optimized for Mean Reciprocal Rank.}
+      \end{cvitems}
+    }
+\end{cventries}
+
+%-------------------------------------------------------------------------------
+\cvsection{Technical Skills}
+\begin{cvskills}
+  \cvskill
+    {Languages}
+    {Python, Java, C++, SQL, Bash, R}
+  \cvskill
+    {ML / Deep Learning}
+    {PyTorch, Lightning, Transformers, CNN, LSTM, PEFT / LoRA, FlashAttention, scikit-learn, XGBoost, LightGBM, TensorFlow}
+  \cvskill
+    {MLE / MLOps}
+    {W\&B, MLflow, Hugging Face, Docker, FastAPI, REST APIs, CI/CD, pytest/JUnit, model evaluation, drift analysis}
+  \cvskill
+    {Data \& Infrastructure}
+    {Spark, Kafka, Airflow, Pandas, Polars, SQL optimization, MongoDB, AWS, GCP, Slurm, Nextflow, Kubernetes}
+  \cvskill
+    {GenAI / Retrieval}
+    {LangGraph, LangChain, MCP, RAG, tool-calling, ChromaDB, SentenceTransformers, agent evaluation, }
+\end{cvskills}
+
+%-------------------------------------------------------------------------------
+\cvsection{Publications \& Conferences}
+\begin{cventries}
+\cventry
+{~}{~}{~}{~}
+{
+\begin{cvitems}
+% \item {\textbf{Gupta I.}, Amariuta T. \textit{DiploFormer: Deep Learning framework for capturing Non-Additive Regulatory Effects on Gene Expression and Chromatin Accessibility.} Presented at Keystone AI in Molecular Biology, 2025; \textbf{ASHG}, 2026. (github.com/IshaanSD/DiploFormer\_1000G\_atac)}
+% \item {Zhang Z., \textbf{Gupta I.}, Pevzner P.A. \textit{GenomeDecoder: inferring segmental duplications in repetitive genomic regions.} \textbf{Bioinformatics}, 2025.}
+% \item {Yoo D.A., et al. \textit{Complete sequencing of ape genomes.} \textbf{Nature}, 2025.} (ishaansd.github.io/iPlots)
+\item {\textit{DiploFormer: Deep Learning framework for capturing Non-Additive Regulatory Effects on Gene Expression and Chromatin Accessibility.} Presented at Keystone AI in Molecular Biology, 2025; \textbf{ASHG}, 2026. (github.com/IshaanSD/DiploFormer\_1000G\_atac)}
+\item {\textit{GenomeDecoder: inferring segmental duplications in repetitive genomic regions.} \textbf{Bioinformatics}, 2025.}
+\item {\textit{Complete sequencing of ape genomes.} \textbf{Nature}, 2025.} (ishaansd.github.io/iPlots)
+\end{cvitems}
+}
+\end{cventries}
+
+\cvsection{Certifications}
+\begin{cventries}
+\cventry
+{~}{~}{~}{~}
+{
+\begin{cvitems}
+\item {\textbf{AI Agents:} Google AI Agents Capstone \quad | \quad \textbf{Data Engineering:} IBM SQL, ETL/Airflow/Kafka, Spark/Hadoop \quad | \quad \\ \textbf{Backend:} Advanced Java Spring Integration Testing}
+\end{cvitems}
+}
+\end{cventries}
+
+\cvsection{Teaching Experience}
+\begin{cventries}
+\cventry
+{Teaching Assistant / Tutor}
+{UC San Diego}
+{San Diego, CA}
+{Sep 2020 -- Jun 2022}
+{
+\begin{cvitems}
+\item {Courses: \textit{CSE 181}, \textit{CSE 182}, \textit{BICD 140}, \textit{BILD 4}; taught algorithms, machine learning concepts, statistics for research, and biological data analysis.}
+\item {Supported instruction on graph algorithms, dynamic programming, HMMs, clustering, sequence analysis, databases, and hypothesis testing.}
+\end{cvitems}
+}
+\end{cventries}
+
+% \cvsection{Teaching Experience}
+% \begin{cventries}
+% \cventry
+% {Teaching Assistant / Tutor}
+% {UC San Diego}
+% {San Diego, CA}
+% {Sep 2020 -- Jun 2022}
+% {
+% \begin{cvitems}
+% \item {Taught data structures and algorithms, machine learning, biological databases, immunology, and lab methods across 4 courses, supporting technical instruction, grading, and student mentoring.}
+% \item {Explained complex topics including graph algorithms, dynamic programming, HMMs, clustering, statistics, and scientific writing to undergraduate students.}
+% \end{cvitems}
+% }
+% \end{cventries}
+
+
+\end{document}
