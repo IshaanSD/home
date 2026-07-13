@@ -127,11 +127,11 @@ const experiences = {
   heading: "Experience",
   data: [
     {
-      role: ‘Graduate Student Researcher — Deep Learning (Dr. Tiffany Amariuta)’,
-      company: ‘Halıcıoğlu Data Science Institute, UCSD’,
-      companylogo: require(‘../assets/img/ucsd_cse.png’),
-      link: ‘https://datascience.ucsd.edu/’,
-      date: ‘Sep 2024 – Present’,
+      role: "Graduate Student Researcher — Deep Learning (Dr. Tiffany Amariuta)",
+      company: "Halıcıoğlu Data Science Institute, UCSD",
+      companylogo: require("../assets/img/ucsd_cse.png"),
+      link: "https://datascience.ucsd.edu/",
+      date: "Sep 2024 – Present",
       info: `
         <ul>
           <li>Built DiploFormer, a Nextflow/PyTorch framework to adapt foundation models to personal genomes for disease mechanisms discovery.</li>
@@ -143,11 +143,11 @@ const experiences = {
       `
     },
     {
-      role: ‘AI Data Scientist Intern’,
-      company: ‘Intuitive Surgical, Inc.’,
-      companylogo: require(‘../assets/img/intuitive_logo160.png’),
-      link: ‘https://www.intuitive.com/’,
-      date: ‘Jun 2026 – Sep 2026’,
+      role: "AI Data Scientist Intern",
+      company: "Intuitive Surgical, Inc.",
+      companylogo: require("../assets/img/intuitive_logo160.png"),
+      link: "https://www.intuitive.com/",
+      date: "Jun 2026 – Sep 2026",
       info: `
         <ul>
           <li>Engineered Python/SQL components across the full analytics pipeline, transforming action-recognition outputs from 100K+ surgical cases into validated event tables, benchmark metrics, and dashboard-ready user-facing insights for analyzing hospital operational efficiency.</li>
@@ -158,11 +158,11 @@ const experiences = {
       `
     },
     {
-      role: ‘Machine Learning Engineer Intern’,
-      company: ‘Abterra Biosciences’,
-      companylogo: require(‘../assets/img/Abterra-bio.jpeg’),
-      link: ‘https://abterrabio.com/’,
-      date: ‘Jul 2024 – Sep 2024’,
+      role: "Machine Learning Engineer Intern",
+      company: "Abterra Biosciences",
+      companylogo: require("../assets/img/Abterra-bio.jpeg"),
+      link: "https://abterrabio.com/",
+      date: "Jul 2024 – Sep 2024",
       info: `
         <ul>
           <li>Benchmarked autoregressive transformer models for de novo peptide sequencing, improving held-out performance 4× on in-house data.</li>
@@ -173,11 +173,11 @@ const experiences = {
       `
     },
     {
-      role: ‘Graduate Student Researcher — Algorithms (Dr. Pavel A. Pevzner)’,
-      company: ‘UCSD CSE Department’,
-      companylogo: require(‘../assets/img/ucsd_cse.png’),
-      link: ‘https://bioalgorithms.ucsd.edu/’,
-      date: ‘Jan 2022 – Jul 2024’,
+      role: "Graduate Student Researcher — Algorithms (Dr. Pavel A. Pevzner)",
+      company: "UCSD CSE Department",
+      companylogo: require("../assets/img/ucsd_cse.png"),
+      link: "https://bioalgorithms.ucsd.edu/",
+      date: "Jan 2022 – Jul 2024",
       info: `
         <ul>
           <li>Co-designed GenomeDecoder (C++) for finding 10K–1M long inexact repeats in 100M-long sequences by iteratively simplifying de Bruijn graphs.</li>
@@ -188,11 +188,11 @@ const experiences = {
       `
     },
     {
-      role: ‘Software Engineer I — Systems Integration’,
-      company: ‘Illumina, Inc.’,
-      companylogo: require(‘../assets/img/illumina.png’),
-      link: ‘https://www.illumina.com/’,
-      date: ‘Jun 2022 – Dec 2022’,
+      role: "Software Engineer I — Systems Integration",
+      company: "Illumina, Inc.",
+      companylogo: require("../assets/img/illumina.png"),
+      link: "https://www.illumina.com/",
+      date: "Jun 2022 – Dec 2022",
       info: `
         <ul>
           <li>Developed production-grade ETL infrastructure code for high-throughput lab automation workflows processing 10,000s of samples/day.</li>
