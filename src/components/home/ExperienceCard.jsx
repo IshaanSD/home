@@ -12,7 +12,7 @@ const ExperienceCard = ({ data }) => {
     <Row>
     <Col lg="6">
       <div className="pb-5 text-center">
-      <a target='_blank' href={data.link}>
+      <a target='_blank' rel="noreferrer" href={data.link}>
         <img className=" bg-white mb-3" 
           src={data.companylogo} 
           alt={data.company} 
